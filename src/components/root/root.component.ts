@@ -6,9 +6,12 @@ import {
   Slot,
   Textbus,
   useContext,
-  ComponentStateLiteral, Registry
+  ComponentStateLiteral, Registry, Subscription,
+  fromEvent, filter
 } from '@textbus/core'
 import { ParagraphComponent } from '@/components/paragraph/paragraph.component'
+import { VIEW_CONTAINER } from '@textbus/platform-browser'
+import { inject, onUnmounted } from 'vue'
 
 export interface RootComponentState {
   slot: Slot

@@ -4,11 +4,13 @@ import { createApp } from 'vue'
 import { VueAdapter } from '@textbus/adapter-vue'
 import { RootComponent } from '@/components/root/root.component'
 import { ParagraphComponent } from '@/components/paragraph/paragraph.component'
+import { collaborateModule } from './components/collab/collab.component'
 
 import './app.css'
 
 import RootView from '@/components/root/root.view.vue'
 import ParagraphView from '@/components/paragraph/paragraph.view.vue'
+import Collab from '@/components/collab/collab.vue'
 import { AdapterInjectToken, TextbusInjectToken } from '@/tokens'
 
 // 实例化 Vue 适配器
@@ -34,12 +36,13 @@ const browserModule = new BrowserModule({
 // 实例化 Textbus
 const textbus = new Textbus({
   imports: [
-    browserModule
+    browserModule,
+    collaborateModule
   ],
   components: [
     RootComponent,
     ParagraphComponent
-  ]
+  ],
 })
 
 // 创建根组件实例

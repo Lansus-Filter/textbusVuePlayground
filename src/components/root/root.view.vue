@@ -4,7 +4,6 @@
   </div>
 </template>
 <script lang="ts">
-// 创建视图 Vue 根组件
 import { defineComponent, inject } from 'vue'
 import { ViewComponentProps } from '@textbus/adapter-vue'
 import { createVNode } from '@textbus/core'
